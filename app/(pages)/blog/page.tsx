@@ -3,6 +3,8 @@ import { client, urlFor } from "@/app/lib/sanity";
 import Link from "next/link";
 import React from "react";
 
+export const revalidate = 30;
+
 async function getData() {
   const query = `
   *[_type == 'blog'] | order(_createdAt desc) {

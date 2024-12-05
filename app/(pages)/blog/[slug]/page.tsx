@@ -3,6 +3,8 @@ import React from "react";
 import { client, urlFor } from "@/app/lib/sanity";
 import { fullBlog } from "@/app/interface/blog";
 
+export const revalidate = 30;
+
 async function getData(slug: string) {
   const query = `
 *[_type == "blog" && slug.current == "${slug}"]{
