@@ -3,7 +3,7 @@ import { client, urlFor } from "@/app/lib/sanity";
 import Link from "next/link";
 import React from "react";
 
-export const revalidate = 30;
+// export const revalidate = 30;
 
 async function getData() {
   const query = `
