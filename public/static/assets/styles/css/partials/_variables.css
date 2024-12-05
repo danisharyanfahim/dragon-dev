@@ -1,0 +1,12 @@
+:root {
+  /* Colors */
+  --color-1: rgba(250, 245, 255, 1);
+  --color-2: rgba(235, 230, 255, 1);
+  --color-3: rgba(225, 220, 255, 1);
+  --color-4: rgb(128, 126, 173);
+  --color-5: rgb(24, 1, 77);
+  --color-6: rgb(7, 1, 36);
+
+  /* dimensions */
+  --navbar-height: 4rem;
+}
