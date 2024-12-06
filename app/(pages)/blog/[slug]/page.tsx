@@ -21,27 +21,43 @@ function formatDate(dateString: string) {
   const date = dateString.substring(0, dateString.indexOf("T"));
   const time = dateString.substring(
     dateString.length - 9,
-    dateString.indexOf("Z")
+    dateString.length - 4
   );
-  return `${date} ${time}`;
+  return `${date}`;
 }
 
 const BlogPage = async ({ params }: { params: { slug: string } }) => {
   const data: fullBlog = await getData(params.slug);
   return (
-    <div className="blog-page" style={{ marginTop: "4rem", width: "100%" }}>
-      <img
-        src={urlFor(data.titleImage).url()}
-        alt="Hero"
-        style={{ objectFit: "contain", height: "100%", width: "100%" }}
-      />
-      <h1>{data.title}</h1>
-      <p>Written By: Danish Fahim </p>
-      <p>Written {formatDate(data._createdAt)}</p>
-      <p>Updated {formatDate(data._updatedAt)}</p>
-      {data.content.map((item, index: number) => {
-        return <p key={index}>{item}</p>;
-      })}
+    <div className="blog-page-container">
+      <main className="blog-page">
+        <figure className="image-container">
+          <img
+            className="hero-image"
+            src={urlFor(data.titleImage).url()}
+            alt="Hero"
+          />
+        </figure>
+        <article>
+          <section className="article-head">
+            <h2 className="author-info">Dans - Blog</h2>
+            <h1 className="title">{data.title}</h1>
+            <div className="dates-container">
+              <p className="date-created">
+                Written: {formatDate(data._createdAt)}
+              </p>
+              <p className="date-updated">
+                Last Updated: {formatDate(data._updatedAt)}
+              </p>
+            </div>
+          </section>
+          <section className="article-body">
+            {data.content.map((item, index: number) => {
+              return <p key={index}>{item}</p>;
+            })}
+          </section>
+        </article>
+      </main>
     </div>
   );
 };

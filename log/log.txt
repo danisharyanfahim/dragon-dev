@@ -1,0 +1,7 @@
+Navbar Features:
+-Home Logo
+-Side Nav with Menu
+-Active Link Button Display
+-Theme Toggler
+-Page Progress indicator
+-Responsive

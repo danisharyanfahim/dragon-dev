@@ -1,91 +1,162 @@
 @use "../scss/navbar.module.scss";
+@use "../scss/blog.module.scss";
 @import url("../css/globals.css");
 
-.card {
-  //   padding: 1rem; /* Optional: internal padding for the items */
-  width: 100%;
-  height: 100%;
-  background: white;
-  border-radius: 1rem;
-  text-align: center;
-  transition: all 0.3s;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  overflow: hidden;
-  padding-bottom: 1rem;
+// .card {
+//   //   padding: 1rem; /* Optional: internal padding for the items */
+//   width: 100%;
+//   height: 100%;
+//   background: white;
+//   border-radius: 1rem;
+//   text-align: center;
+//   transition: all 0.3s;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-evenly;
+//   align-items: center;
+//   overflow: hidden;
+//   padding-bottom: 1rem;
 
-  .media-container {
-    display: flex;
-    justify-content: center; /* Variable */
-    align-items: center;
-    min-width: max(250px, 40%);
-    height: 60%;
-    width: 100%;
+//   .media-container {
+//     display: flex;
+//     justify-content: center;
+//     /* Variable */
+//     align-items: center;
+//     min-width: max(250px, 40%);
+//     height: 60%;
+//     width: 100%;
 
-    img {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
-  }
-  .content-container {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-evenly;
-    width: 100%;
-    height: 40%;
-    // max-width: max(1000px, 60%);
-    // padding: 1rem clamp(1rem, 5% - 1.25rem, 8rem) 1rem 1rem;
+//     img {
+//       position: absolute;
+//       height: 100%;
+//       width: 100%;
+//       object-fit: cover;
+//     }
+//   }
 
-    > * {
-      margin-bottom: 1rem;
-    }
+//   .content-container {
+//     // display: flex;
+//     // flex-direction: column;
+//     // justify-content: space-evenly;
+//     width: 100%;
+//     height: 40%;
+//     // max-width: max(1000px, 60%);
+//     // padding: 1rem clamp(1rem, 5% - 1.25rem, 8rem) 1rem 1rem;
 
-    > :first-child {
-      margin-top: 1rem;
-    }
+//     > * {
+//       margin-bottom: 1rem;
+//     }
 
-    &.right {
-      > * {
-        justify-content: right;
+//     > :first-child {
+//       margin-top: 1rem;
+//     }
 
-        &.text {
-          display: table-cell;
-          text-align: right;
-          vertical-align: middle;
-        }
-      }
-    }
+//     &.right {
+//       > * {
+//         justify-content: right;
 
-    .card-button {
-      background-color: rgb(59, 126, 226);
-      padding: 1rem;
-      border-radius: 5px;
-    }
-  }
-}
+//         &.text {
+//           display: table-cell;
+//           text-align: right;
+//           vertical-align: middle;
+//         }
+//       }
+//     }
 
-.container {
-  padding: 1rem;
-  display: flex; /* Enable flexbox layout */
-  flex-wrap: wrap; /* Allow items to wrap onto new rows */
-  gap: 1rem; /* Optional: space between items */
+//     .card-button {
+//       background-color: rgb(59, 126, 226);
+//       padding: 1rem;
+//       border-radius: 5px;
+//     }
+//   }
+// }
 
-  .container-item {
-    flex: 1 1 300px; /* Flex items will grow, shrink, and have a base size of 300px */
-    min-width: 288px; /* Set a minimum width for each item */
-    min-height: 400px;
-    display: flex;
-    flex-direction: column; /* Ensure content inside item is flexible */
-    justify-content: center;
-    align-items: center;
-  }
-}
+// .container {
+//   padding: 1rem;
+//   display: flex;
+//   /* Enable flexbox layout */
+//   flex-wrap: wrap;
+//   /* Allow items to wrap onto new rows */
+//   gap: 1rem;
+//   /* Optional: space between items */
+
+//   .container-item {
+//     flex: 1 1 300px;
+//     /* Flex items will grow, shrink, and have a base size of 300px */
+//     min-width: 288px;
+//     /* Set a minimum width for each item */
+//     min-height: 400px;
+//     display: flex;
+//     flex-direction: column;
+//     /* Ensure content inside item is flexible */
+//     justify-content: center;
+//     align-items: center;
+//   }
+// }
+
+// .blog-page {
+//   color: white;
+//   width: 100%;
+
+//   .article-info {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     width: 100%;
+
+//     p {
+//       display: table-cell;
+//       text-align: justify;
+//       vertical-align: middle;
+//       padding-left: 1rem;
+//       padding-right: 1rem;
+//     }
+
+//     > *:not(:first-child) {
+//       padding-top: 1rem;
+//     }
+
+//     .image-container {
+//       height: 50dvh;
+//       width: 100%;
+
+//       .hero-image {
+//         object-fit: cover;
+//         height: 100%;
+//         width: 100%;
+//       }
+//     }
+
+//     .title {
+//       font-size: xx-large;
+//     }
+//   }
+
+//   article.content-container {
+//     display: flex;
+//     flex-direction: column;
+
+//     p {
+//       display: table-cell;
+//       text-align: justify;
+//       vertical-align: middle;
+//       padding-left: 1rem;
+//       padding-right: 1rem;
+//     }
+
+//     > * {
+//       padding-top: 1rem;
+//     }
+
+//     > :last-child {
+//       padding-bottom: 1rem;
+//     }
+//   }
+// }
 
 footer {
+  min-height: 50dvh;
   width: 100%;
-  background: var(--color-5);
+  background: linear-gradient(45deg, var(--color-2), var(--color-1));
 }

@@ -1,3 +1,28 @@
+@font-face {
+  font-family: paragraph;
+  src: url("../../../../fonts/IBMPlexSans-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: title;
+  src: url("../../../../fonts/IBMPlexSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: subtitle;
+  src: url("../../../../fonts/IBMPlexSans-SemiBold.ttf") format("truetype");
+}
+
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: paragraph, sans-serif;
+}
+
+h1 {
+  font-family: title, sans-serif;
+  font-size: clamp(2.25rem, 3vw + 1rem, 4.5rem);
+}
+
+h2 {
+  font-family: subtitle, sans-serif;
+  font-size: clamp(1.875rem, 1vw + 1.5rem, 3rem);
 }

@@ -10,6 +10,7 @@ const Navbar = () => {
       <HomeButton />
       <ThemeToggle />
       <NavMenu btnInfo={navBtnInfo} />
+      <div className="border"></div>
     </nav>
   );
 };

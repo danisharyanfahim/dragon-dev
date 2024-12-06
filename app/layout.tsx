@@ -18,8 +18,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <main style={{ marginTop: "4rem" }}>{children}</main>
-          <Footer />
+          <div style={{ marginTop: "4rem" }} className="page-container">
+            {children}
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>

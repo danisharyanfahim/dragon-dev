@@ -1,0 +1,4 @@
+Sanity:
+
+-Must cd into the sanity directory before the running the npm run dev command and then going over to localhost:3333 and signing in to sanity.io
+-Also when installing the sanity project using the npm cli command, remember to change the name, the pathname, and to not let sanity change the next config files when it asks you for the option

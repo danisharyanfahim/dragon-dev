@@ -9,12 +9,53 @@ body {
 .navbar {
   height: 4rem;
   width: 100%;
-  background: linear-gradient(135deg, var(--color-1), var(--color-2));
+  background: linear-gradient(45deg, var(--color-2), var(--color-1));
   position: fixed;
   top: 0rem;
   box-sizing: content-box;
-  border-bottom: 3px solid var(--color-4);
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
+
   z-index: 1000;
+  overflow-x: hidden;
+
+  .border {
+    position: absolute;
+    z-index: 20;
+    height: 100%;
+    width: 100%;
+    border-bottom: 1px solid rgba(64, 64, 83, 0.144);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 30%;
+    left: -85px;
+    min-width: 200px;
+    max-width: 600px;
+    transform: skewX(37deg);
+    background: linear-gradient(0deg, rgb(197, 0, 0), rgb(141, 0, 0));
+    border-right: clamp(10px, 10vw, 60px) solid rgb(226, 226, 243);
+    box-shadow: inset 0px -2px 15px 0px rgba(255, 0, 0, 0.3),
+      inset -5px 3px 10px 0px rgba(0, 0, 0, 0.25);
+    z-index: 5;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 30%;
+    left: -115px;
+    min-width: 200px;
+    max-width: 600px;
+    transform: skewX(37deg);
+    background: linear-gradient(45deg, black, rgb(26, 29, 46));
+    z-index: 10;
+    border-right: 15px solid rgb(214, 0, 0);
+    box-shadow: inset -10px 0px 20px 1px rgba(0, 0, 0, 0.7);
+  }
 }
 
 .theme-toggle-container {
@@ -26,7 +67,7 @@ body {
   align-items: center;
   position: absolute;
   right: 4rem;
-  background: rgb(42, 75, 163);
+  z-index: 25;
 
   .theme-toggle {
     height: 50%;
@@ -37,20 +78,25 @@ body {
 .nav-menu-button,
 .home-button {
   height: 100%;
-  aspect-ratio: 1 / 1;
-  background: rgb(118, 144, 214);
 
   &:hover {
     background: rgb(58, 78, 187);
   }
+  z-index: 25;
 }
 
 .home-button {
   float: left;
+  aspect-ratio: 1 / 1;
 }
 
 .nav-menu-button {
   float: right;
+  // background: linear-gradient(180deg, rgba(5, 0, 29), rgba(12, 0, 66));
+  transform: skewX(37deg);
+  aspect-ratio: 2 / 1;
+  right: -50px;
+  // border-left: 15px solid rgb(201, 203, 226);
 }
 
 .side-nav {
