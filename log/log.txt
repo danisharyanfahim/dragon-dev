@@ -5,3 +5,7 @@ Navbar Features:
 -Theme Toggler
 -Page Progress indicator
 -Responsive
+
+Blog-page:
+-Infinite scroll
+-FlexContainer

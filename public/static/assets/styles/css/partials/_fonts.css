@@ -14,7 +14,11 @@
 }
 
 * {
+}
+
+p {
   font-family: paragraph, sans-serif;
+  font-size: clamp(1rem, 1vw + 0.75rem, 1.55rem);
 }
 
 h1 {
@@ -25,4 +29,9 @@ h1 {
 h2 {
   font-family: subtitle, sans-serif;
   font-size: clamp(1.875rem, 1vw + 1.5rem, 3rem);
+}
+
+h4 {
+  font-family: subtitle, sans-serif;
+  font-size: clamp(1.25rem, 1vw + 1rem, 2.25rem);
 }

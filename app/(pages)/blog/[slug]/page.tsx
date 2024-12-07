@@ -29,8 +29,8 @@ function formatDate(dateString: string) {
 const BlogPage = async ({ params }: { params: { slug: string } }) => {
   const data: fullBlog = await getData(params.slug);
   return (
-    <div className="blog-page-container">
-      <main className="blog-page">
+    <div className="blog-article-container">
+      <main className="blog-article">
         <figure className="image-container">
           <img
             className="hero-image"
@@ -40,7 +40,7 @@ const BlogPage = async ({ params }: { params: { slug: string } }) => {
         </figure>
         <article>
           <section className="article-head">
-            <h2 className="author-info">Dans - Blog</h2>
+            <h4 className="author-info">Dans - Blog</h4>
             <h1 className="title">{data.title}</h1>
             <div className="dates-container">
               <p className="date-created">

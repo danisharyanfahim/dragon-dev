@@ -21,25 +21,36 @@ async function getData() {
 const Blog = async () => {
   const data: simpleBlogCard[] = await getData();
   return (
-    <div className="container">
-      {data.map((post, index) => {
-        return (
-          <div className="container-item" key={index}>
-            <div className="card">
-              <figure className="media-container">
-                <img src={urlFor(post.titleImage).url()} alt="test-image" />
-              </figure>
-              <div className="content-container">
-                <h1 className="title">{post.title}</h1>
-                <p className="overview">{post.overview}</p>
-                <button className="card-button">
-                  <Link href={`/blog/${post.currentSlug}`}>Read More</Link>
-                </button>
+    <div className="blog-page">
+      <div className="blog-container container">
+        {data.map((post, index) => {
+          return (
+            <div className="container-item" key={index}>
+              <div className="blog-card">
+                <figure className="media-container">
+                  <img src={urlFor(post.titleImage).url()} alt="test-image" />
+                </figure>
+                <div className="content-container">
+                  <h4 className="title text">{post.title}</h4>
+                  {/* <p className="overview">{post.overview}</p> */}
+                  <p className="overview text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus aliquet consectetur ligula, ac porta diam molestie
+                    non.
+                  </p>
+                  <div className="card-button-container">
+                    <button className="card-button">
+                      <Link href={`/blog/${post.currentSlug}`}>
+                        <p>Read More</p>
+                      </Link>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 };

@@ -6,9 +6,9 @@ const Footer = () => {
   return (
     <footer>
       <FlexContainer>
-        <VerticalCard />
-        <VerticalCard />
-        <VerticalCard />
+        <section></section>
+        <section></section>
+        <section></section>
       </FlexContainer>
     </footer>
   );
