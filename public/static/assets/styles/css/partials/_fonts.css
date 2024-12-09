@@ -31,6 +31,10 @@ h2 {
   font-size: clamp(1.875rem, 1vw + 1.5rem, 3rem);
 }
 
+h3 {
+  font-family: subtitle, sans-serif;
+}
+
 h4 {
   font-family: subtitle, sans-serif;
   font-size: clamp(1.25rem, 1vw + 1rem, 2.25rem);

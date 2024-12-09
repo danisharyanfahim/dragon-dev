@@ -1,0 +1,119 @@
+footer {
+  width: 100%;
+  background: linear-gradient(45deg, var(--color-2), var(--color-1));
+  padding: 0rem clamp(1rem, 27.5vw - 11rem, 35rem);
+  border-top: 3px solid rgba(0 0 0 / 0.15);
+  box-shadow: 0px 0px 3px 0px rgba(0 0 0 / 0.5);
+
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .container {
+    margin: 2rem 0rem;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &:not(.copyright-container) {
+      min-height: 15rem;
+      padding: 1rem;
+    }
+
+    &.mission-container {
+      justify-content: space-around;
+    }
+
+    &.info-container {
+      justify-content: space-between;
+    }
+
+    &.links-container {
+      justify-content: space-between;
+
+      > :not(:first-child) {
+        padding-bottom: 0.5rem;
+      }
+    }
+
+    .information-card {
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+
+      .icon-container {
+        display: flex;
+        position: relative;
+        flex: 0 0 48px;
+        filter: drop-shadow(0px 0px 10px rgba(19, 19, 185, 0.329));
+
+        .icon {
+          height: 100%;
+          width: 100%;
+          background: linear-gradient(
+            -45deg,
+            rgb(6, 24, 184),
+            rgb(40, 68, 228)
+          );
+        }
+      }
+
+      .content-container {
+        padding-left: 1rem;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        min-height: 56px;
+
+        > * {
+          padding: 0.5rem 0rem;
+        }
+      }
+    }
+
+    p {
+      font-size: clamp(1rem, 1cqw + 0.75rem, 1.55rem);
+      color: rgb(25, 87, 179);
+    }
+
+    a p {
+      &:hover {
+        color: red;
+        transition: all 0.1s;
+      }
+    }
+
+    h4 {
+      font-size: clamp(1.45rem, 1vw + 1rem, 2rem);
+      background: linear-gradient(-45deg, rgb(6, 24, 184), rgb(40, 68, 228));
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      padding-bottom: 1rem;
+      padding-top: 0.5rem;
+      text-shadow: 0px 0px 10px rgba(19, 19, 185, 0.205);
+    }
+
+    .copyright-text,
+    .mission-text {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .mission-text {
+      text-align: justify;
+    }
+
+    .copyright-text {
+      border-top: 1px solid rgb(187, 187, 219);
+      width: 100%;
+      text-align: center;
+      padding: 1rem;
+    }
+  }
+}

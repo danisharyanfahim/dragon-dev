@@ -1,11 +1,23 @@
 Navbar Features:
--Home Logo
+-Home Logo 
 -Side Nav with Menu
+-Side Nav animation
+-Side Nav styling
+-Menu icon
 -Active Link Button Display
--Theme Toggler
+-Day/Night Theme Toggler
 -Page Progress indicator
 -Responsive
+-Search bar
 
 Blog-page:
 -Infinite scroll
 -FlexContainer
+
+
+Footer:
+-Mission statement
+-Social media icons
+-Logo
+-Background image
+-Additional styling like light blue glow at the top or bottom

@@ -16,7 +16,7 @@ const Footer = () => {
             security services to protect your business from evolving digital
             threats
           </p>
-          <div className="social-media-icons-container"></div>
+          {/* <div className="social-media-icons-container"></div> */}
         </section>
         <section className="links-container">
           <h4>Links</h4>
@@ -32,7 +32,7 @@ const Footer = () => {
           {footerInfo.map((info, index) => {
             return (
               <div className="information-card">
-                {/* <figure className="icon-container">
+                <figure className="icon-container">
                   <div
                     style={{
                       mask: `url(${info.iconUrl})`,
@@ -46,7 +46,7 @@ const Footer = () => {
                     }}
                     className={info.name + " icon"}
                   ></div>
-                </figure> */}
+                </figure>
                 <div className="content-container">
                   <p className="info-text">{info.text}</p>
                 </div>
