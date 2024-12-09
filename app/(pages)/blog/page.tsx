@@ -25,7 +25,7 @@ const Blog = async () => {
       <div className="blog-container container">
         {data.map((post, index) => {
           return (
-            <div className="container-item" key={index}>
+            <div className="container-item blog-card-container" key={index}>
               <div className="blog-card">
                 <figure className="media-container">
                   <img src={urlFor(post.titleImage).url()} alt="test-image" />
@@ -39,11 +39,11 @@ const Blog = async () => {
                     non.
                   </p>
                   <div className="card-button-container">
-                    <button className="card-button">
-                      <Link href={`/blog/${post.currentSlug}`}>
+                    <Link href={`/blog/${post.currentSlug}`}>
+                      <button className="card-button">
                         <p>Read More</p>
-                      </Link>
-                    </button>
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>

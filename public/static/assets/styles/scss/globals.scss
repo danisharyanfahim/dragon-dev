@@ -66,7 +66,6 @@
 }
 
 .container {
-  padding: 1rem;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -81,19 +80,6 @@
   }
 }
 
-footer {
-  width: 100%;
-  background: linear-gradient(45deg, var(--color-2), var(--color-1));
-  padding: 0rem clamp(1rem, 27.5vw - 11rem, 35rem);
-
-  section {
-    background-color: black;
-    height: 100%;
-    width: 100%;
-    min-height: 400px;
-  }
-}
-
 .blog-page {
   margin: 5rem clamp(1rem, 27.5vw - 11rem, 35rem);
 }
@@ -102,81 +88,188 @@ footer {
   width: 100%;
   container-type: inline-size;
 
-  .blog-card {
-    width: 100%;
-    height: 100%;
-    border-radius: 1rem;
-    // overflow: hidden;
-    background: linear-gradient(135deg, var(--color-2), var(--color-1));
-    padding: 0.5rem;
-    container-type: inline-size;
-    border: 4px solid rgba(0 0 0 / 0.15);
-    max-width: max(50cqw, 25rem);
-    box-sizing: padding-box;
-    z-index: 3;
+  .blog-card-container {
+    padding: 1rem;
 
-    .media-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: clamp(18rem, 100cqw - 4rem, 20rem);
+    .blog-card {
       width: 100%;
+      height: 100%;
+      border-radius: 1rem;
+      // overflow: hidden;
+      background: linear-gradient(135deg, var(--color-2), var(--color-1));
+      padding: 0.5rem;
+      container-type: inline-size;
+      border: 2px solid rgba(0 0 0 / 0.15);
+      max-width: max(50cqw, 25rem);
+      z-index: 3;
 
-      img {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        border-top-left-radius: calc(1rem - 8px);
-        border-bottom-left-radius: 0rem;
-        border-top-right-radius: calc(1rem - 8px);
-        border-bottom-right-radius: 100% 50%;
-        box-shadow: 0px 0px 15px 0px rgba(39, 55, 107, 0.25);
-      }
-    }
-
-    .content-container {
-      display: flex;
-      flex-direction: column;
-      padding: clamp(2rem, 18cqw - 1rem, 3rem);
-      min-height: 10rem;
-      color: rgb(14, 50, 150);
-
-      > *:not(:first-child) {
-        padding-top: 0.5rem;
-      }
-
-      .title,
-      p {
-        display: table-cell;
-        text-align: center;
-        vertical-align: middle;
-      }
-
-      p {
-        font-size: clamp(1rem, 1cqw + 0.75rem, 1.55rem);
-      }
-
-      .title {
-        font-size: clamp(1.25rem, 1cqw + 1rem, 1.813rem);
-        color: rgb(7, 12, 70);
-      }
-
-      .card-button-container {
+      .media-container {
         display: flex;
         justify-content: center;
-        margin-top: 1.5rem;
-        .card-button {
-          background: linear-gradient(
-            -45deg,
-            rgb(6, 24, 184),
-            rgb(40, 68, 228)
-          );
-          padding: 0.5rem 2rem;
-          border-radius: 50px;
-          box-shadow: 0px 0px 10px 0px rgba(0 20 150 / 0.25);
+        align-items: center;
+        min-height: clamp(18rem, 100cqw - 4rem, 20rem);
+        width: 100%;
+
+        img {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          border-top-left-radius: calc(1rem - 8px);
+          border-bottom-left-radius: 0rem;
+          border-top-right-radius: calc(1rem - 8px);
+          border-bottom-right-radius: 100% 50%;
+          box-shadow: 0px 0px 15px 0px rgba(39, 55, 107, 0.25);
+        }
+      }
+
+      .content-container {
+        display: flex;
+        flex-direction: column;
+        padding: clamp(2rem, 18cqw - 1rem, 3rem);
+        min-height: 10rem;
+        color: rgb(14, 50, 150);
+
+        > *:not(:first-child) {
+          padding-top: 0.5rem;
+        }
+
+        .title,
+        p {
+          display: table-cell;
+          text-align: center;
+          vertical-align: middle;
+        }
+
+        p {
+          font-size: clamp(1rem, 1cqw + 0.75rem, 1.55rem);
+        }
+
+        .title {
+          font-size: clamp(1.25rem, 1cqw + 1rem, 1.813rem);
+          color: rgb(7, 12, 70);
+        }
+
+        .card-button-container {
+          display: flex;
+          justify-content: center;
+          margin-top: 1.5rem;
+          .card-button {
+            background: linear-gradient(
+              -45deg,
+              rgb(6, 24, 184),
+              rgb(40, 68, 228)
+            );
+            padding: 0.5rem 2rem;
+            border-radius: 50px;
+            box-shadow: 0px 0px 10px 0px rgba(0 20 150 / 0.25);
+            cursor: pointer;
+          }
         }
       }
     }
   }
 }
+
+footer {
+  width: 100%;
+  background: linear-gradient(45deg, var(--color-2), var(--color-1));
+  padding: 2rem clamp(1rem, 27.5vw - 11rem, 35rem) 0rem;
+  container-type: inline-size;
+  container-name: footer;
+  border-top: 3px solid rgba(0 0 0 / 0.15);
+  min-height: 23rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0px 0px 3px 0px rgba(0 0 0 / 0.5);
+
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    height: 100%;
+
+    &.mission-container {
+      justify-content: space-around;
+    }
+
+    &.info-container {
+      justify-content: space-around;
+    }
+
+    &.links-container {
+      justify-content: center;
+
+      > :not(:first-child) {
+        padding-bottom: 0.5rem;
+      }
+
+      :first-child {
+        padding-bottom: 1rem;
+      }
+    }
+
+    .information-card {
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+
+      //   .icon-container {
+      //     display: flex;
+      //     position: relative;
+      //     flex: 0 0 64px;
+      //     min-height: 32px;
+
+      //     .icon {
+      //       height: 100%;
+      //       width: 100%;
+      //       background: rgb(0, 0, 0);
+      //     }
+      //   }
+
+      //   .content-container {
+      //     display: flex;
+      //     justify-content: left;
+      //     align-items: center;
+      //   }
+    }
+
+    p {
+      font-size: clamp(1rem, 1cqw + 0.75rem, 1.55rem);
+      color: rgb(14, 50, 150);
+    }
+
+    h4 {
+      font-size: clamp(1.25rem, 1cqw + 1rem, 1.813rem);
+      color: rgb(7, 12, 70);
+    }
+
+    .copyright-text,
+    .mission-text {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .mission-text {
+      text-align: justify;
+    }
+
+    .copyright-text {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+// @container footer (max-width: 1356px) {
+//   .information-card {
+//     background-color: red;
+//   }
+// }

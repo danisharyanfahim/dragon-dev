@@ -1,11 +1,20 @@
 import React from "react";
 
-const FlexContainer = ({ children }: { children: React.ReactNode[] }) => {
+const FlexContainer = ({
+  children,
+  containerName,
+}: {
+  children: React.ReactNode[];
+  containerName?: string;
+}) => {
   return (
     <div className="container">
       {children.map((child, index) => {
         return (
-          <div key={"container-item" + index} className="container-item">
+          <div
+            key={"container-item" + index}
+            className={`container-item ${containerName}-container`}
+          >
             {child}
           </div>
         );
