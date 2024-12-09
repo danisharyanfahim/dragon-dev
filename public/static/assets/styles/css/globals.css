@@ -12,7 +12,7 @@
 html,
 body {
   color: var(--text-color);
-  background: linear-gradient(135deg, rgb(9, 9, 17) 50%, rgb(2, 2, 53));
+  background: linear-gradient(-45deg, rgb(13, 13, 179), rgb(194, 12, 124));
   margin: 0rem;
   width: 100%;
   min-height: 100dvh;

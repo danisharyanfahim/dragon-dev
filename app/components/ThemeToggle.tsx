@@ -25,11 +25,11 @@ const ThemeToggle = () => {
       );
     } else if (resolvedTheme === "dark") {
       return (
-        <FiSun className="theme-toggle" onClick={() => setTheme("light")} />
+        <FiMoon className="theme-toggle" onClick={() => setTheme("light")} />
       );
     } else {
       return (
-        <FiMoon className="theme-toggle" onClick={() => setTheme("dark")} />
+        <FiSun className="theme-toggle" onClick={() => setTheme("dark")} />
       );
     }
   };

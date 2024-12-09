@@ -1,12 +1,31 @@
 :root {
   /* Colors */
-  --color-1: rgba(250, 248, 255, 1);
-  --color-2: rgba(240, 238, 250, 1);
-  --color-3: rgba(225, 220, 255, 1);
-  --color-4: rgb(128, 126, 173);
-  --color-5: rgb(19, 19, 19);
-  --color-6: rgb(14, 14, 14);
+  --background-color-1: rgba(250, 248, 255, 1);
+  --background-color-2: rgba(240, 238, 250, 1);
+  --highlight-color-1: rgb(6, 24, 184);
+  --highlight-color-2: rgb(40, 68, 228);
+  --highlight-color-3: rgb(255, 0, 0);
+  --highlight-color-4: rgb(131, 12, 12);
+  --text-color: rgb(14, 50, 150);
+  --text-color-2: rgb(25, 87, 179);
+  --text-title-color-1: rgb(7, 12, 70);
+  --text-shadow-color-1: rgba(19, 19, 185, 0.24);
+  --text-shadow-color-2: rgba(185, 19, 19, 0.24);
+
+  --text-title-color-2: rgb(16, 37, 224);
 
   /* dimensions */
   --navbar-height: 4rem;
+
+  --border-radius-outer: 1rem;
+  --border-radius-inner: calc(1rem - 8px);
+  --border-radius-inner-2: calc(1rem - 4px);
+}
+
+.dark {
+  --background-color-1: rgb(9, 9, 17);
+  --background-color-2: rgb(4, 4, 22);
+  --text-color: rgb(219, 216, 243);
+  --text-title-color-1: rgb(232, 232, 250);
+  --text-shadow-color-1: rgba(16, 16, 218, 0.336);
 }
