@@ -13,7 +13,7 @@ const FlexContainer = ({
         return (
           <div
             key={"container-item" + index}
-            className={`container-item ${containerName}-container`}
+            className={`container-item ${containerName}`}
           >
             {child}
           </div>

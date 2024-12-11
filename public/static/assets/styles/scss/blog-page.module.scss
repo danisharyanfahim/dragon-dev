@@ -1,0 +1,106 @@
+.blog-page {
+  margin: 5rem clamp(1rem, 27.5vw - 11rem, 35rem);
+}
+
+.blog-container {
+  width: 100%;
+  container-type: inline-size;
+
+  .blog-card-container {
+    padding: 1rem;
+
+    .blog-card {
+      width: 100%;
+      height: 100%;
+      border-radius: var(--border-radius-outer);
+      // overflow: hidden;
+      background: linear-gradient(
+        135deg,
+        var(--background-color-2-transparent),
+        var(--background-color-1-transparent)
+      );
+      backdrop-filter: blur(30px);
+      // padding: 0.5rem;
+      container-type: inline-size;
+      border: 4px solid rgba(255 255 255 / 0.2);
+      max-width: max(50cqw, 25rem);
+      z-index: 3;
+
+      .media-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: clamp(18rem, 100cqw - 4rem, 20rem);
+        width: 100%;
+
+        img {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          border-top-left-radius: var(--border-radius-inner-2);
+          border-bottom-left-radius: 0rem;
+          border-top-right-radius: var(--border-radius-inner-2);
+          border-bottom-right-radius: 100% 50%;
+          box-shadow: 0px 0px 15px 0px rgba(39, 55, 107, 0.25);
+        }
+      }
+
+      .content-container {
+        display: flex;
+        flex-direction: column;
+        padding: clamp(2rem, 18cqw - 1rem, 3rem);
+        min-height: 10rem;
+
+        > *:not(:first-child) {
+          padding-top: 0.5rem;
+        }
+
+        .title,
+        p {
+          display: table-cell;
+          text-align: center;
+          vertical-align: middle;
+        }
+
+        p {
+          font-size: clamp(1rem, 1cqw + 0.75rem, 1.55rem);
+        }
+
+        .title {
+          font-size: clamp(1.25rem, 1cqw + 1rem, 1.813rem);
+          color: var(--text-title-color-1);
+        }
+
+        .card-button-container {
+          display: flex;
+          justify-content: center;
+          margin-top: 1.5rem;
+          .card-button {
+            background: linear-gradient(
+              -45deg,
+              var(--highlight-color-1),
+              var(--highlight-color-2)
+            );
+            padding: 0.5rem 2rem;
+            border-radius: 50px;
+            box-shadow: 0px 0px 10px 0px var(--text-shadow-color-1);
+            cursor: pointer;
+            p {
+              color: white;
+            }
+
+            &:hover {
+              background: linear-gradient(
+                -45deg,
+                var(--highlight-color-4),
+                var(--highlight-color-3)
+              );
+              box-shadow: 0px 0px 10px 0px var(--text-shadow-color-2);
+            }
+          }
+        }
+      }
+    }
+  }
+}

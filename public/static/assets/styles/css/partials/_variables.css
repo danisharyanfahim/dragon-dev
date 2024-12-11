@@ -2,6 +2,8 @@
   /* Colors */
   --background-color-1: rgba(250, 248, 255, 1);
   --background-color-2: rgba(240, 238, 250, 1);
+  --background-color-1-transparent: rgba(250, 248, 255, 0.9);
+  --background-color-2-transparent: rgba(240, 238, 250, 0.9);
   --highlight-color-1: rgb(6, 24, 184);
   --highlight-color-2: rgb(40, 68, 228);
   --highlight-color-3: rgb(255, 0, 0);
@@ -11,6 +13,7 @@
   --text-title-color-1: rgb(7, 12, 70);
   --text-shadow-color-1: rgba(19, 19, 185, 0.24);
   --text-shadow-color-2: rgba(185, 19, 19, 0.24);
+  --border-color-1: rgba(0, 0, 30, 0.15);
 
   --text-title-color-2: rgb(16, 37, 224);
 
@@ -25,7 +28,10 @@
 .dark {
   --background-color-1: rgb(9, 9, 17);
   --background-color-2: rgb(4, 4, 22);
+  --background-color-1-transparent: rgba(9, 9, 17, 0.5);
+  --background-color-2-transparent: rgba(4, 4, 22, 0.5);
   --text-color: rgb(219, 216, 243);
   --text-title-color-1: rgb(232, 232, 250);
   --text-shadow-color-1: rgba(16, 16, 218, 0.336);
+  --border-color-1: rgba(245, 242, 255, 0.15);
 }

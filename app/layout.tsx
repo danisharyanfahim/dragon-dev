@@ -2,6 +2,7 @@ import { ThemeProvider } from "./context/ThemeProvider";
 import "../public/static/assets/styles/scss/globals.scss";
 import Navbar from "./components/layout/nav/Navbar";
 import Footer from "./components/layout/Footer";
+import Background from "./components/layout/Background";
 
 export default function RootLayout({
   children,
@@ -23,6 +24,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
+        <Background />
       </body>
     </html>
   );

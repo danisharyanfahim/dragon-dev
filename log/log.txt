@@ -21,3 +21,16 @@ Footer:
 -Logo
 -Background image
 -Additional styling like light blue glow at the top or bottom
+
+
+Next:
+-Make other pages
+-Better theme design
+-Theme smooth transition
+-Theme toggle design
+-Make my Logo
+-Side nav design
+-Search bar + query
+-Code feature for articles
+-Tag feature for articles
+-Menu icon

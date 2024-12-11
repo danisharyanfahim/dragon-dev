@@ -36,5 +36,17 @@ export default {
         },
       ],
     },
+    {
+      name: 'codeBlock',
+      type: 'code',
+      title: 'Code Block',
+      options: {
+        languageAlternatives: [
+          {title: 'Typescript', value: 'typescript'},
+          {title: 'React', value: 'react'},
+          {title: 'react-like', value: 'react-like', mode: 'react'},
+        ],
+      },
+    },
   ],
 }

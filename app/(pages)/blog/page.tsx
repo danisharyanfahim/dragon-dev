@@ -51,7 +51,6 @@ const Blog = async () => {
           );
         })}
       </div>
-      <div className="test"></div>
     </div>
   );
 };
