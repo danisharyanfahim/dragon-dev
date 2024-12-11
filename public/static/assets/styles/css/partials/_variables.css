@@ -1,5 +1,6 @@
 :root {
   /* Colors */
+  --white: rgba(250, 248, 255, 1);
   --background-color-1: rgba(250, 248, 255, 1);
   --background-color-2: rgba(240, 238, 250, 1);
   --background-color-1-transparent: rgba(250, 248, 255, 0.9);
@@ -23,6 +24,8 @@
   --border-radius-outer: 1rem;
   --border-radius-inner: calc(1rem - 8px);
   --border-radius-inner-2: calc(1rem - 4px);
+  --font-size-paragraph: clamp(1rem, 1vw + 0.75rem, 1.55rem);
+  --font-size-small: clamp(0.813rem, 1vw + 0.25rem, 1.125rem);
 }
 
 .dark {

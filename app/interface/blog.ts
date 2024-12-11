@@ -8,8 +8,20 @@ export interface simpleBlogCard {
 export interface fullBlog {
   title: string;
   currentSlug: string;
-  content: any;
+  categories: [Category];
   titleImage: any;
+  content: any;
   _createdAt: string;
   _updatedAt: string;
+}
+
+export interface Category {
+  name: string;
+  relevance: number;
+}
+
+export interface CodeContainerProps {
+  fileName: string;
+  language: string;
+  code: string;
 }

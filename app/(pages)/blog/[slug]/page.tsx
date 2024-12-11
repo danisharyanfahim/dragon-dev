@@ -2,6 +2,7 @@ import React from "react";
 
 import { client, urlFor } from "@/app/lib/sanity";
 import { fullBlog } from "@/app/interface/blog";
+import CodeContainer from "@/app/components/ui/containers/CodeContainer";
 
 export const revalidate = 30;
 
@@ -9,11 +10,21 @@ async function getData(slug: string) {
   const query = `
 *[_type == "blog" && slug.current == "${slug}"]{
   "currentSlug": slug.current,
-  title, "content": content[].children[0].text, titleImage, _createdAt, _updatedAt
+  title, titleImage, _createdAt, _updatedAt, categories[] | order(relevance asc) {'name': categoryName, relevance},
+  content[]{
+      _type == 'block' => {
+        'type': 'text',
+       'text': children[0].text
+      }, _type == 'document' => {
+        'type': 'code',
+        'fileName': fileName + '.' + fileType, 'language': Code.language, 'code': Code.code
+        }
+        }
 }[0]
     `;
 
   const data = await client.fetch(query);
+  console.log(data);
   return data;
 }
 
@@ -50,10 +61,36 @@ const BlogPage = async ({ params }: { params: { slug: string } }) => {
                 Last Updated: {formatDate(data._updatedAt)}
               </p>
             </div>
+            <div className="category-container">
+              {data?.categories.map((category, index) => {
+                const { name, relevance } = category;
+                console.log(relevance);
+                return (
+                  <div
+                    className={`category-tag relevance-${relevance}`}
+                    key={index}
+                  >
+                    <small>{`#${name}`}</small>
+                  </div>
+                );
+              })}
+            </div>
           </section>
           <section className="article-body">
             {data.content.map((item, index: number) => {
-              return <p key={index}>{item}</p>;
+              if (item.type === "text") {
+                return <p key={index}>{item.text}</p>;
+              } else if (item.type === "code") {
+                const { language, fileName, code } = item;
+                return (
+                  <CodeContainer
+                    key={index}
+                    language={language}
+                    fileName={fileName}
+                    code={code}
+                  ></CodeContainer>
+                );
+              }
             })}
           </section>
         </article>
