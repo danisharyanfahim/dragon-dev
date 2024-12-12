@@ -19,8 +19,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
           <Suspense>
+            <Navbar />
             {/* Add a fallback to a loading page afterwards */}
             <div style={{ marginTop: "4rem" }} className="page-container">
               {children}
