@@ -13,6 +13,13 @@ Navbar Features:
 Blog-page:
 -Infinite scroll
 -FlexContainer
+-Lazy Loading
+
+Search bar:
+-Proper styling
+-Responsive
+-Cleaning up the Code
+-Title Querying
 
 
 Footer:

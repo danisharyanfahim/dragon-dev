@@ -47,3 +47,11 @@ figure {
   margin-inline-start: 0em;
   margin-inline-end: 0em;
 }
+
+textarea,
+input {
+  outline: none;
+  border: none;
+  -webkit-appearance: none;
+  appearance: none;
+}

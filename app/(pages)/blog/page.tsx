@@ -1,25 +1,43 @@
+import SearchBar from "@/app/components/layout/SearchBar";
 import { simpleBlogCard } from "@/app/interface/blog";
 import { client, urlFor } from "@/app/lib/sanity";
 import Link from "next/link";
-import React from "react";
 
 export const revalidate = 30;
 
-async function getData() {
-  const query = `
-  *[_type == 'blog'] | order(_createdAt desc) {
-  title,
-  overview, "currentSlug": slug.current,
-  titleImage
-  }`;
+async function getData(category: string | null) {
+  const query =
+    category?.length !== 0
+      ? `*[_type == "blog" && "${category?.replace(
+          /(^\w{1})|(\s+\w{1})/g,
+          (letter) => letter.toUpperCase()
+        )}" in categories[].categoryName] | order(_createdAt desc) {
+          title,
+          overview, "currentSlug": slug.current,
+          titleImage
+        }`
+      : `*[_type == "blog"] | order(_createdAt desc) {
+          title,
+          overview, "currentSlug": slug.current,
+          titleImage
+        }`;
 
   const data = await client.fetch(query);
 
   return data;
 }
 
-const Blog = async () => {
-  const data: simpleBlogCard[] = await getData();
+const Blog = async ({
+  searchParams,
+}: {
+  searchParams?: Promise<{ category: string } | undefined>;
+}) => {
+  // Ensure that searchParams is resolved before using
+  const { category } = (await searchParams) || undefined;
+
+  // Fetch data based on the resolved category
+  const data: simpleBlogCard[] = await getData(category ?? "");
+
   return (
     <div className="blog-page">
       <div className="blog-container container">

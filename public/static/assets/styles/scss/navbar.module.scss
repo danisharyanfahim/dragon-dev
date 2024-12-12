@@ -139,3 +139,46 @@ body {
   height: 100dvh;
   width: 100%;
 }
+
+.search-container {
+  position: absolute;
+  z-index: 100;
+  background: linear-gradient(135deg, rgba(44, 44, 71), rgba(34, 34, 61));
+  border-radius: 100px;
+  overflow: hidden;
+  border: 1px solid #1e1f20de;
+  margin-left: 40%;
+  margin-top: 0.5rem;
+
+  form {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    .search-button {
+      height: 100%;
+      padding-left: 0.7rem;
+      padding-right: 0.9rem;
+      &:hover {
+        p {
+          filter: drop-shadow(0px 0px 10px white);
+          transform: scale(105%);
+        }
+      }
+      p {
+        display: flex;
+        align-items: center;
+      }
+    }
+    input {
+      padding: 0.8rem 1.25rem;
+      font-size: 16px;
+      min-width: 20rem;
+      border-radius: 100px 0px 0px 100px;
+      background: linear-gradient(rgba(30, 30, 45), rgba(20, 20, 35));
+
+      &:hover {
+        box-shadow: inset 0px 0px 0px 2px white;
+      }
+    }
+  }
+}

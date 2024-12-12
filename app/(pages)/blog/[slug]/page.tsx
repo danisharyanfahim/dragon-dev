@@ -3,6 +3,7 @@ import React from "react";
 import { client, urlFor } from "@/app/lib/sanity";
 import { fullBlog } from "@/app/interface/blog";
 import CodeContainer from "@/app/components/ui/containers/CodeContainer";
+import Tag from "@/app/components/ui/Tag";
 
 export const revalidate = 30;
 
@@ -24,7 +25,6 @@ async function getData(slug: string) {
     `;
 
   const data = await client.fetch(query);
-  console.log(data);
   return data;
 }
 
@@ -64,15 +64,7 @@ const BlogPage = async ({ params }: { params: { slug: string } }) => {
             <div className="category-container">
               {data?.categories.map((category, index) => {
                 const { name, relevance } = category;
-                console.log(relevance);
-                return (
-                  <div
-                    className={`category-tag relevance-${relevance}`}
-                    key={index}
-                  >
-                    <small>{`#${name}`}</small>
-                  </div>
-                );
+                return <Tag name={name} relevance={relevance} key={index} />;
               })}
             </div>
           </section>
